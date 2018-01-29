@@ -64,3 +64,6 @@ script:
 
   # Run db required tests eg behat
   - lando behat --config=/app/tests/behat-lando.yml
+"group": "stable",
+"dist": "trusty",
+"os": "linux"
