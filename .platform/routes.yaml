@@ -3,7 +3,21 @@
 # Each route describes how an incoming URL is going
 # to be processed by Platform.sh.
 
-"https://{default}/":
+#"https://{default}/":
+#    type: upstream
+#    upstream: "peenelando:http"
+#    cache:
+#      enabled: true
+#
+#      # Base the cache on the session cookie. Ignore all other cookies.
+#      cookies: ['/^SS?ESS/']
+#
+#"https://www.{default}/":
+#    type: redirect
+#    to: "https://{default}/"
+
+
+"https://wald.one/":
     type: upstream
     upstream: "peenelando:http"
     cache:
@@ -12,6 +26,6 @@
       # Base the cache on the session cookie. Ignore all other cookies.
       cookies: ['/^SS?ESS/']
 
-"https://www.{default}/":
+"https://www.wald.one/":
     type: redirect
-    to: "https://{default}/"
+    to: "https://wald.one/"
