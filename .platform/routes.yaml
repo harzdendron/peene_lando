@@ -3,6 +3,6 @@
 # Each route describes how an incoming URL is going
 # to be processed by Platform.sh.
 
-"http://www.peene.one/":
-  type: upstream
-  upstream: "peenelando:http"
+"https://www.{default}/":
+    type: upstream
+    upstream: "peenelando:http"
