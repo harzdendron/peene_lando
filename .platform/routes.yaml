@@ -6,5 +6,5 @@
   type: upstream
   upstream: "peenelando:http"
 "http://www.{default}/":
-  type: redirect
-  to: "http://{default}/"
+  type: upstream
+  upstream: "peenelando:http"
