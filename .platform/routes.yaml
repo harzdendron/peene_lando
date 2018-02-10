@@ -2,9 +2,9 @@
 #
 # Each route describes how an incoming URL is going
 # to be processed by Platform.sh.
-"https://{default}/":
+"http://{default}/":
   type: upstream
   upstream: "peenelando:http"
-"https://www.{default}/":
+"http://www.{default}/":
   type: redirect
-  to: "https://{default}/"
+  to: "http://{default}/"
