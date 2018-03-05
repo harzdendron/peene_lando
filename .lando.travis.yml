@@ -27,9 +27,9 @@ services:
     build:
 #      - "curl -sS https://platform.sh/cli/installer | php"
 #      - "cd $LANDO_MOUNT && composer install"
-#       - "mkdir /var/www/.platformsh && mkdir /var/www/.platformsh/bin"
-#       - "curl -fsSL -o /var/www/.platformsh/bin/platform https://github.com/platformsh/platformsh-cli/releases/download/v3.26.0/platform.phar"
-#       - "chmod ug+x /var/www/.platformsh/bin/platform"
+       - "mkdir /var/www/.platformsh && mkdir /var/www/.platformsh/bin"
+       - "curl -fsSL -o /var/www/.platformsh/bin/platform https://github.com/platformsh/platformsh-cli/releases/download/v3.26.0/platform.phar"
+       - "chmod ug+x /var/www/.platformsh/bin/platform"
     overrides:
       services:
         environment:
