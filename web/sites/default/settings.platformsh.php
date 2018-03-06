@@ -142,3 +142,4 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
     $config['search_api.server.' . $solr_server_name]['backend_config']['connector_config']['host'] = $solr['host'];
     $config['search_api.server.' . $solr_server_name]['backend_config']['connector_config']['port'] = $solr['port'];
   }
+}
