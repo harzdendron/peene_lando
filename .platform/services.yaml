@@ -13,3 +13,10 @@ mysqldb:
 solrsearch:
     type: solr:6.6
     disk: 1024
+    configuration:
+        cores:
+            maincore:
+                conf_dir: !archive "solr-conf/6.x"
+        endpoints:
+            main:
+                core: maincore
