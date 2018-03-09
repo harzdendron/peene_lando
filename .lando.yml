@@ -30,11 +30,26 @@ services:
        - "mkdir /var/www/.platformsh && mkdir /var/www/.platformsh/bin"
        - "curl -fsSL -o /var/www/.platformsh/bin/platform https://github.com/platformsh/platformsh-cli/releases/download/v3.26.0/platform.phar"
        - "chmod ug+x /var/www/.platformsh/bin/platform"
-       - "cd $LANDO_MOUNT && composer install"
     overrides:
       services:
         environment:
           BEHAT_PARAMS: '{"extensions" : {"Behat\\MinkExtension" : {"base_url" : "http://nginx/"}, "Drupal\\DrupalExtension" : {"drush" :   {  "root":  "/app/web" }}}}'
+
+# hier wird der Name des Solrcontainers vermerkt, gleichzeitig die Einstellung fuer lokalen Solr Host
+  localhost1:
+ # solrsearch:
+    type: solr:6.6
+    portforward: 8999
+#    disk: 1024
+#    configuration:
+    core: maincore
+#        maincore:
+    config:  
+      conf: .platform/solr-conf/6.x
+      endpoints:
+         main:
+           core: maincore
+
 
 # Ensure `composer install` also happens every time you start your site
 events:
