@@ -17,6 +17,10 @@ type: 'php:7.1'
 relationships:
     database: 'mysqldb:mysql'
     solr: 'solrsearch:main'
+
+
+
+    
 #    redis: 'rediscache:redis'
 
 # The size of the persistent disk of the application (in MB).

@@ -26,3 +26,6 @@ web/sites/*/settings.local.php
 
 # Lint cache
 .phplint-cache
+
+# Ignore Solr-Konfig
+solrconf
