@@ -9,6 +9,7 @@ config:
 
   # Lando defaults to Apache. Switch to nginx to match Platform.sh.
   via: nginx
+   
 
   # Set the webroot to match your .platform.app.yaml.
   webroot: web
@@ -16,12 +17,21 @@ config:
   # Set this to match the version in your .platform.app.yaml.
   php: 7.1
 
+
   # Lando defaults to the latest MySQL release, but Platform.sh uses MariaDB.
   # Specify the version to match what's in services.yaml.
   database: mariadb:10.1
 
 # The following additional build step will install the Platform CLI
 # in the application container and auto-run `composer install`
+#proxy:
+#  appserver:
+#    - solr.lndo.site
+#  index:
+#    - admin.solr.lndo.site:8983
+
+
+
 services:
   appserver:
     build:
@@ -35,20 +45,20 @@ services:
         environment:
           BEHAT_PARAMS: '{"extensions" : {"Behat\\MinkExtension" : {"base_url" : "http://nginx/"}, "Drupal\\DrupalExtension" : {"drush" :   {  "root":  "/app/web" }}}}'
 
-# hier wird der Name des Solrcontainers vermerkt, gleichzeitig die Einstellung fuer lokalen Solr Host
-  localhost1:
- # solrsearch:
+    #      THING: STUFF
+    #    ports: ['9112:81']
+
+
+# Name Solrcontainers, gleichzeitig lokaler Solr Host, localhost fuehrt zu Konflikten
+  solrsearch:
     type: solr:6.6
     portforward: 8999
-#    disk: 1024
-#    configuration:
     core: maincore
-#        maincore:
     config:  
-      conf: .platform/solr-conf/6.x
-      endpoints:
-         main:
-           core: maincore
+        conf: .platform/solr-conf/6.x
+        endpoints:
+          main:
+             core: maincore
 
 
 # Ensure `composer install` also happens every time you start your site
