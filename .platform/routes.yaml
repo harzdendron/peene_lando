@@ -7,7 +7,20 @@
 #    upstream: "peenelando:http"
 
 
-"https://{default}/":
+#"https://{default}/":
+#   type: upstream
+#   upstream: "peenelando:http"
+#   cache:
+#     enabled: true
+#
+#      # Base the cache on the session cookie. Ignore all other cookies.
+#      cookies: ['/^SS?ESS/']
+#
+#"https://www.{default}/":
+#    type: redirect
+#    to: "https://{default}/"
+
+"https://www.{default}/":
     type: upstream
     upstream: "peenelando:http"
     cache:
@@ -16,6 +29,6 @@
       # Base the cache on the session cookie. Ignore all other cookies.
       cookies: ['/^SS?ESS/']
 
-"https://www.{default}/":
+"https://{default}/":
     type: redirect
-    to: "https://{default}/"
+    to: "https://www.{default}/"
