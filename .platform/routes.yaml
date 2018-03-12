@@ -2,9 +2,9 @@
 # Each route describes how an incoming URL is going
 # to be processed by Platform.sh.
 
-#"https://www.{default}/":
-#    type: upstream
-#    upstream: "peenelando:http"
+"https://www.{default}/":
+    type: upstream
+    upstream: "peenelando:http"
 
 
 #"https://{default}/":
@@ -20,14 +20,14 @@
 #    type: redirect
 #    to: "https://{default}/"
 
-"https://www.{default}/":
-    type: upstream
-    upstream: "peenelando:http"
-    cache:
-      enabled: true
-
-      # Base the cache on the session cookie. Ignore all other cookies.
-      cookies: ['/^SS?ESS/']
+#"https://www.{default}/":
+#    type: upstream
+#    upstream: "peenelando:http"
+#    cache:
+#      enabled: true
+#
+#      # Base the cache on the session cookie. Ignore all other cookies.
+#      cookies: ['/^SS?ESS/']
 
 #"https://{default}/":
 #    type: redirect
