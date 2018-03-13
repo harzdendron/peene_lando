@@ -20,11 +20,11 @@
 #    type: redirect
 #    to: "https://{default}/"
 
-"https://www.ilm.one/":
+"https://www.{default}/":
     type: upstream
     upstream: "peenelando:http"
-    cache:
-      enabled: true
+#    cache:
+#      enabled: true
 
       # Base the cache on the session cookie. Ignore all other cookies.
       cookies: ['/^SS?ESS/']
