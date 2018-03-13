@@ -20,7 +20,7 @@
 #    type: redirect
 #    to: "https://{default}/"
 
-"https://www.{default}/":
+"https://www.ilm.one/":
     type: upstream
     upstream: "peenelando:http"
     cache:
