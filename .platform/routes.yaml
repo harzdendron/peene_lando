@@ -23,7 +23,7 @@
 "https://www.{default}/":
     type: upstream
     upstream: "peenelando:http"
-     cache:
+    cache:
        enabled: true
 
       # Base the cache on the session cookie. Ignore all other cookies.
