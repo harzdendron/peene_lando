@@ -23,7 +23,8 @@
         "drush/drush": "~8",
         "drupal/console": "~1.0",
         "drupal/search_api": "^1.7",
-        "drupal/search_api_solr": "^1.2"
+        "drupal/search_api_solr": "^1.2",
+        "drupal/redis": "^1.0@RC"
     },
     "require-dev": {
         "behat/behat": "3.*",

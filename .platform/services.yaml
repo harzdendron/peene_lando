@@ -6,10 +6,7 @@
 mysqldb:
     type: mysql:10.2
     disk: 2048
-#
-#rediscache:
-#    type: redis:3.2
-#
+
 solrsearch:
     type: solr:6.6
     disk: 1024
@@ -20,3 +17,6 @@ solrsearch:
         endpoints:
             main:
                 core: maincore
+
+rediscache:
+    type: redis:3.2
