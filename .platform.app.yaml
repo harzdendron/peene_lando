@@ -9,6 +9,13 @@ name: 'peenelando'
 # The runtime the application uses.
 type: 'php:7.1'
 
+# Additional extensions
+runtime:
+    extensions:
+        - redis
+
+
+
 # The relationships of the application with services or other applications.
 #
 # The left-hand side is the name of the relationship as it will be exposed
@@ -17,7 +24,7 @@ type: 'php:7.1'
 relationships:
     database: 'mysqldb:mysql'
     solr: 'solrsearch:main'
-
+    redis: "rediscache:redis"
 
 
     
