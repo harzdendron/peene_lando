@@ -15,12 +15,13 @@ config:
   webroot: web
 
   # Set this to match the version in your .platform.app.yaml.
-  php: 7.2
-
+ # php: 7.2
 
   # Lando defaults to the latest MySQL release, but Platform.sh uses MariaDB.
   # Specify the version to match what's in services.yaml.
   database: mariadb:10.1
+
+  
 
 # The following additional build step will install the Platform CLI
 # in the application container and auto-run `composer install`
@@ -34,6 +35,7 @@ config:
 
 services:
   appserver:
+    type: php:7.2
     build:
 #      - "curl -sS https://platform.sh/cli/installer | php"
 #      - "cd $LANDO_MOUNT && composer install"
@@ -44,9 +46,12 @@ services:
       services:
         environment:
           BEHAT_PARAMS: '{"extensions" : {"Behat\\MinkExtension" : {"base_url" : "http://nginx/"}, "Drupal\\DrupalExtension" : {"drush" :   {  "root":  "/app/web" }}}}'
-
+    config:
+      conf: php.ini
     #      THING: STUFF
     #    ports: ['9112:81']
+#  config:
+#		conf: php.ini
 
 
 # Name Solrcontainers, gleichzeitig lokaler Solr Host, localhost fuehrt zu Konflikten
