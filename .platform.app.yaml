@@ -114,3 +114,6 @@ crons:
     drupal:
         spec: '*/20 * * * *'
         cmd: 'cd web ; drush core-cron'
+dependencies:
+  php:
+    wizaplace/php-fpm-status-cli: "^1.0"
